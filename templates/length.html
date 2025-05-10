@@ -1,29 +1,36 @@
 {% extends "index.html" %}
 {% block content %}
-<div>
-    <label for="length_from">From Length</label>
-    <select id="length_from" name="length_from">
-        <option value="mm">millimeter</option>
-        <option value="cm">centimeter</option>
-        <option value="m">meter</option>
-        <option value="km">kilometer</option>
-        <option value="in">inch</option>
-        <option value="ft">foot</option>
-        <option value="yd">yard</option>
-        <option value="mi">mile</option>
-    </select>
-</div>
-<div>
-    <label for="length_to">To Length</label>
-    <select id="length_to" name="length_to">
-        <option value="mm">millimeter</option>
-        <option value="cm">centimeter</option>
-        <option value="m">meter</option>
-        <option value="km">kilometer</option>
-        <option value="in">inch</option>
-        <option value="ft">foot</option>
-        <option value="yd">yard</option>
-        <option value="mi">mile</option>
-    </select>
-</div>
+<form action="/length" method="post">
+    <div>
+        <label for="len_in">Enter Length:</label>
+        <input type="number" name="len_in" id="len_in" step="any">
+    </div>
+    <div>
+        <label for="len_from">From Length</label>
+        <select id="len_from" name="len_from">
+            <option value="mm">millimeter</option>
+            <option value="cm">centimeter</option>
+            <option value="m">meter</option>
+            <option value="km">kilometer</option>
+            <option value="in">inch</option>
+            <option value="ft">foot</option>
+            <option value="yd">yard</option>
+            <option value="mi">mile</option>
+        </select>
+    </div>
+    <div>
+        <label for="len_to">To Length</label>
+        <select id="len_to" name="len_to">
+            <option value="mm">millimeter</option>
+            <option value="cm">centimeter</option>
+            <option value="m">meter</option>
+            <option value="km">kilometer</option>
+            <option value="in">inch</option>
+            <option value="ft">foot</option>
+            <option value="yd">yard</option>
+            <option value="mi">mile</option>
+        </select>
+    </div>
+    <button type="submit">Convert</button>
+</form>
 {% endblock content %}

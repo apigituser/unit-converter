@@ -1,19 +1,26 @@
 {% extends "index.html" %}
 {% block content %}
-<div>
-    <label for="temperature_from">From Temperature</label>
-    <select id="temperature_from" name="temperature_from">
-      <option value="C">Celsius</option>
-      <option value="F">Fahrenheit</option>
-      <option value="K">Kelvin</option>
-    </select>
-</div>
-<div>
-    <label for="temperature_to">To Temperature</label>
-    <select id="temperature_to" name="temperature_to">
-      <option value="C">Celsius</option>
-      <option value="F">Fahrenheit</option>
-      <option value="K">Kelvin</option>
-    </select>
-</div>
+<form action="/temperature" method="post">
+  <div>
+      <label for="temp_in">Enter Temperature:</label>
+      <input type="number" name="temp_in" id="temp_in" step="any">
+  </div>
+  <div>
+      <label for="temp_from">From Temperature</label>
+      <select id="temp_from" name="temp_from">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+      </select>
+  </div>
+  <div>
+      <label for="temp_to">To Temperature</label>
+      <select id="temp_to" name="temp_to">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+      </select>
+  </div>
+  <button type="submit">Convert</button>
+</form>
 {% endblock content %}

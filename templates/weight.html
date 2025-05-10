@@ -1,23 +1,30 @@
 {% extends "index.html" %}
 {% block content %}
-<div>
-    <label for="weight_from">From Weight</label>
-    <select id="weight_from" name="weight_from">
-        <option value="mg">milligram</option>
-        <option value="g">gram</option>
-        <option value="kg">kilogram</option>
-        <option value="oz">ounce</option>
-        <option value="lb">pound</option>
-    </select>
-</div>
-<div>
-    <label for="weight_to">To Weight</label>
-    <select id="weight_to" name="weight_to">
-        <option value="mg">milligram</option>
-        <option value="g">gram</option>
-        <option value="kg">kilogram</option>
-        <option value="oz">ounce</option>
-        <option value="lb">pound</option>
-    </select>
-</div>
+<form action="/weight" method="post">
+    <div>
+        <label for="weight_in">Enter Weight:</label>
+        <input type="number" name="weight_in" id="weight_in" step="any">
+    </div>
+    <div>
+        <label for="weight_from">From Weight</label>
+        <select id="weight_from" name="weight_from">
+            <option value="mg">milligram</option>
+            <option value="g">gram</option>
+            <option value="kg">kilogram</option>
+            <option value="oz">ounce</option>
+            <option value="lb">pound</option>
+        </select>
+    </div>
+    <div>
+        <label for="weight_to">To Weight</label>
+        <select id="weight_to" name="weight_to">
+            <option value="mg">milligram</option>
+            <option value="g">gram</option>
+            <option value="kg">kilogram</option>
+            <option value="oz">ounce</option>
+            <option value="lb">pound</option>
+        </select>
+    </div>
+    <button type="submit">Convert</button>
+</form>
 {% endblock content %}
