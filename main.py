@@ -28,4 +28,18 @@ def length(request: Request):
 
 @app.post("/temperature")
 def length(request: Request, temp_in: str = Form(), temp_from: str = Form(), temp_to: str = Form()):
-    return templates.TemplateResponse(request=request, name="result.html", context={"input": temp_in, "from": temp_from, "to": temp_to})
+    temp_in = int(temp_in)
+    temp = temp_in
+
+    match temp_from:
+        case 'C':
+            if temp_to == 'F': temp = (temp_in * 9/5) + 32
+            elif temp_to == 'K': temp = temp_in + 273.15
+        case 'F':
+            if temp_to == 'C': temp = (temp_in - 32) * 5/9
+            elif temp_to == 'K': temp = (temp_in - 32) * 5/9 + 273.15
+        case 'K':
+            if temp_to == 'C': temp = temp_in - 273.15
+            elif temp_to == 'F': temp = (temp_in - 273.15) * 9/5 + 32
+            
+    return templates.TemplateResponse(request=request, name="result.html", context={"result": round(temp, 2)})
