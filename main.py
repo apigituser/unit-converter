@@ -1,5 +1,4 @@
 from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
@@ -12,7 +11,19 @@ def length(request: Request):
 
 @app.post("/length")
 def length(request: Request, len_in: str = Form(), len_from: str = Form(), len_to: str = Form()):
-    return templates.TemplateResponse(request=request, name="result.html", context={"input": len_in, "from": len_from, "to": len_to})
+    unitInCentimeters = {
+        'mm': 0.1,
+        'cm': 1,
+        'm': 100,
+        'km': 100000,
+        'in': 2.54,
+        'ft': 30.48,
+        'yd': 91.44,
+        'mi': 160934.4
+    }
+
+    length = float(len_in) * (unitInCentimeters[len_from]/unitInCentimeters[len_to])
+    return templates.TemplateResponse(request=request, name="result.html", context={"result": round(length, 4)})
 
 @app.get("/weight")
 def weight(request: Request):
