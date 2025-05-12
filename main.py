@@ -20,7 +20,15 @@ def weight(request: Request):
 
 @app.post("/weight")
 def weight(request: Request, weight_in: str = Form(), weight_from: str = Form(), weight_to: str = Form()):
-    return templates.TemplateResponse(request=request, name="result.html", context={"input": weight_in, "from": weight_from, "to": weight_to})
+    unitInGrams = {
+        'mg': 0.001,
+        'g': 1,
+        'kg': 1000,
+        'oz': 28.3495,
+        'lb': 454.592
+    }
+    weight = float(weight_in) * (unitInGrams[weight_from]/unitInGrams[weight_to])
+    return templates.TemplateResponse(request=request, name="result.html", context={"result": round(weight, 2)})
 
 @app.get("/temperature")
 def length(request: Request):
