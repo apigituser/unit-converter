@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <title>Unit Converter</title>
 </head>
 <body>
     <h1>Unit Converter</h1>
     <nav>
-        <a href="/length">Length</a>
-        <a href="/weight">Weight</a>
-        <a href="/temperature">Temperature</a>
+        <a id="length" href="/length">Length</a>
+        <a id="weight" href="/weight">Weight</a>
+        <a id="temperature" href="/temperature">Temperature</a>
     </nav>
     {% block content %}
     {% endblock content %}
