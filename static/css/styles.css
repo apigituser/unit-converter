@@ -1,0 +1,57 @@
+* {
+    font-family: Comic Sans MS;
+}
+
+body {
+    border-width: 34px;
+    border-color: #C08EF9;
+    border-style: outset;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #C08EF9;
+}
+
+div {
+    padding-left: 30%;
+    padding-bottom: 2%;
+}
+
+input {
+    border-color: #C08EF9;
+    border-radius: 5px;
+}
+
+select {
+    border-color: #C08EF9;
+    border-width: 2px;
+    border-radius: 5px;
+    border-style: inset;
+}
+
+button {
+    margin-left: 30%;
+    color: black;
+    background-color:#D7B9F9;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+button:hover {
+    background-color: #C08EF9;
+}
