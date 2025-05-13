@@ -1,5 +1,7 @@
 # Unit Converter
-unit-converter is a web application that converts user-given values between units such as length, weight and temperature
+Unit converter is a web application that converts user-given values between units such as length, weight and temperature
+
+![preview](https://github.com/apigituser/unit-converter/blob/main/preview.png)
 
 ## Functions
 1. Convert Length (millimeter, centimeter, meter, kilometer, inch, foot, yard, mile)
