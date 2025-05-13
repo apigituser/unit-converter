@@ -15,7 +15,7 @@ h1 {
 
 nav {
     text-align: center;
-    padding-bottom: 2%;
+    padding-bottom: 25px;
 }
 
 a {
@@ -28,8 +28,15 @@ a:hover {
 }
 
 div {
-    padding-left: 30%;
-    padding-bottom: 2%;
+    padding-bottom: 25px;
+}
+
+h2 {
+    margin: 0%;
+}
+
+main {
+    text-align: center;
 }
 
 input {
@@ -45,11 +52,9 @@ select {
 }
 
 button {
-    margin-left: 30%;
-    color: black;
     background-color:#D7B9F9;
     border-radius: 5px;
-    margin-bottom: 3%;
+    margin-bottom: 25px;
 }
 
 button:hover {
