@@ -2,5 +2,8 @@
 {% block content %}
 <div>
     <h2>Converted value is {{ result }} {{ unit }}</h2>
+    <form action="/reset" method="get">
+        <button id="reset" type="submit">Reset</button>
+    </form>
 </div>
 {% endblock content %}

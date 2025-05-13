@@ -9,6 +9,7 @@ templates = Jinja2Templates(directory="templates")
 app.mount('/static', StaticFiles(directory='static'), name='static')
 
 @app.get("/")
+@app.get("/reset")
 @app.get("/length")
 def length(request: Request):
     return templates.TemplateResponse(request=request, name="length.html")
